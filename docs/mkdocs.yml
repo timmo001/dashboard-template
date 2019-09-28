@@ -1,0 +1,76 @@
+---
+site_name: Dashboard Docs
+site_description: Lorem ipsum
+site_author: Timmo
+site_url: https://timmo.dev/dashboard/
+
+# Repository
+repo_name: timmo001/dashboard
+repo_url: https://github.com/timmo001/dashboard
+edit_uri: "https://github.com/timmo001/dashboard/edit/master/docs/docs"
+
+# Copyright
+copyright: "Copyright &copy; Timmo"
+
+# Configuration
+theme:
+  name: "material"
+  language: "en"
+  palette:
+    primary: "blue grey"
+    accent: "light blue"
+  font:
+    text: "Roboto"
+    code: "Roboto Mono"
+  favicon: "favicon.ico"
+  logo: "logo.svg"
+
+# Customization
+extra:
+  search:
+    language: "en"
+    tokenizer: '[\s\-\.]+'
+  social:
+    - type: "github"
+      link: "https://github.com/timmo001/dashboard"
+    - type: "twitter"
+      link: "https://twitter.com/timmo001"
+    - type: "stack-overflow"
+      link: "https://stackoverflow.com/users/1888770/timmo"
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Pages
+nav:
+  - Overview: index.md
+  - Getting Started:
+      - Setup: setup.md
+      - Login: login.md
+      - Home Assistant: home-assistant.md
+  - Frequently Asked Questions: faq.md
+  - Troubleshooting: troubleshooting.md
+  - Posting an Issue: issue-posting.md
+  - Contributing: contributing.md
+  - License: license.md

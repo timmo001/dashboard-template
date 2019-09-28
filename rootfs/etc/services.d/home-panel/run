@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Starts server to serve the app
+# ==============================================================================
+echo 'Run Dashboard..'
+
+# shellcheck disable=SC2164
+cd /opt/panel
+
+SSL_PATH_CERT=/ssl/%SSL_CERTFILE%
+SSL_PATH_KEY=/ssl/%SSL_KEYFILE%
+
+export SSL_PATH_CERT
+export SSL_PATH_KEY
+
+exec node lib/
