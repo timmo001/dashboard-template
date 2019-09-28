@@ -6,8 +6,9 @@ import classnames from 'classnames';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-import { ConfigProps } from '../Configuration/Config';
+import { ConfigProps, CardProps } from '../Configuration/Config';
 import { HomeAssistantChangeProps } from '../HomeAssistant/HomeAssistant';
+import Base from '../Cards/Base';
 import Header from './Header/Header';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -15,11 +16,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: '100%',
     maxHeight: '100%',
     overflow: 'hidden'
-  },
-  title: {
-    width: '100%',
-    fontWeight: 300,
-    lineHeight: 1.2
   },
   container: {
     height: '100%',
@@ -39,12 +35,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   groupContainer: {
     overflowX: 'auto',
     overflowY: 'hidden'
-  },
-  group: {
-    height: '100%',
-    maxHeight: '100%',
-    marginBottom: theme.spacing(0.5),
-    overflowX: 'auto'
   }
 }));
 
@@ -79,7 +69,9 @@ function Overview(props: OverviewProps) {
           justify="flex-start"
           alignContent="flex-start"
           spacing={1}>
-          Lorem ipsum
+          {props.config.cards.map((card: CardProps, key: number) => (
+            <Base {...props} key={key} card={card} />
+          ))}
         </Grid>
       </Grid>
     </div>
@@ -91,9 +83,7 @@ Overview.propTypes = {
   editing: PropTypes.number,
   mouseMoved: PropTypes.bool,
   hassConfig: PropTypes.any,
-  hassEntities: PropTypes.any,
-  handleHassChange: PropTypes.func.isRequired,
-  handleUpdateConfig: PropTypes.func.isRequired
+  hassEntities: PropTypes.any
 };
 
 export default Overview;

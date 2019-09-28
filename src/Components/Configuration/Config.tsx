@@ -18,6 +18,7 @@ export type ConfigurationProps = {
   general: GeneralProps;
   theme: ThemeProps;
   header: HeaderProps;
+  cards: CardProps[];
 };
 
 export type GeneralProps = {
@@ -37,6 +38,28 @@ export type HeaderProps = {
   date_show: boolean;
   date_format: string;
   date_location: number;
+};
+
+export type CardProps = {
+  key: string;
+  group: string;
+  type: string;
+  width?: string;
+  height?: string;
+  elevation?: number;
+  square?: boolean;
+  background?: string;
+  title?: string;
+  content?: string;
+  entity?: string;
+  chart?: 'line' | 'area' | 'bar' | 'histogram' | 'radialBar';
+  chart_detail?: 3 | 4 | 5;
+  chart_from?: number;
+};
+
+export type CardType = {
+  name: string;
+  title: string;
 };
 
 export type ThemesProps = {
